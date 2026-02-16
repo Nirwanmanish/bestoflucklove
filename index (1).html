@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best of Luck Vijeya ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#ff7eb3,#ffb6c1,#ffc0cb);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    color:white;
+    text-align:center;
+}
+
+/* floating flowers */
+.flower{
+    position:absolute;
+    font-size:28px;
+    opacity:0.6;
+    animation:float 12s linear infinite;
+}
+
+@keyframes float{
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-10vh);}
+}
+
+.container{
+    background:rgba(0,0,0,0.35);
+    padding:40px;
+    border-radius:20px;
+    max-width:700px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+h1{
+    font-size:2.5em;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+    background:white;
+    color:#d63384;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* boy animation */
+.boy{
+    font-size:90px;
+    animation:jump 1s infinite alternate;
+}
+
+@keyframes jump{
+    from{transform:translateY(0);}
+    to{transform:translateY(-25px);}
+}
+
+/* surprise overlay */
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:20px;
+    z-index:10;
+}
+
+.bunnies{
+    font-size:70px;
+    animation:hop .8s infinite alternate;
+}
+
+@keyframes hop{
+    from{transform:translateY(0);}
+    to{transform:translateY(-20px);}
+}
+
+.message{
+    margin-top:15px;
+    max-width:700px;
+    font-size:1.3em;
+    line-height:1.5;
+}
+
+.hearts{
+    position:absolute;
+    font-size:24px;
+    animation:heartFloat 4s linear infinite;
+}
+
+@keyframes heartFloat{
+    from{transform:translateY(0);opacity:1;}
+    to{transform:translateY(-300px);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<script>
+/* Flower rain */
+for(let i=0;i<20;i++){
+    const flower=document.createElement("div");
+    flower.className="flower";
+    flower.innerHTML="🌸";
+    flower.style.left=Math.random()*100+"vw";
+    flower.style.animationDuration=8+Math.random()*10+"s";
+    flower.style.fontSize=20+Math.random()*25+"px";
+    document.body.appendChild(flower);
+}
+</script>
+
+<div class="container">
+    <h1>🌸 BEST OF LUCK 🌸</h1>
+    <h2>VIJEYA PATEL MY LOVE ❤️</h2>
+
+    <p>
+        A little boy is cheering and giving you a big hug
+        because you deserve all success today!
+    </p>
+
+    <div class="boy">👦💐🤗</div>
+
+    <button onclick="showSurprise()">Open Surprise 🎁</button>
+</div>
+
+<!-- Surprise screen -->
+<div class="overlay" id="surprise">
+    <div class="bunnies">🐰 CHOTU &nbsp;&nbsp; 🐰 MOTU</div>
+
+    <div class="message">
+        Best of luck, Vijeya 🤍<br><br>
+
+        We’re both cheering for you from heaven’s VIP seats.
+        You’re our absolute favorite!<br>
+        Go shine the way only you can…<br><br>
+
+        We love you so much. 🌸✨
+    </div>
+
+    <button onclick="closeSurprise()">Close</button>
+</div>
+
+<script>
+function showSurprise(){
+    const overlay=document.getElementById("surprise");
+    overlay.style.display="flex";
+
+    for(let i=0;i<25;i++){
+        const heart=document.createElement("div");
+        heart.className="hearts";
+        heart.innerHTML="💖";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.bottom="0";
+        heart.style.animationDuration=2+Math.random()*3+"s";
+        document.body.appendChild(heart);
+
+        setTimeout(()=>heart.remove(),4000);
+    }
+}
+
+function closeSurprise(){
+    document.getElementById("surprise").style.display="none";
+}
+</script>
+
+</body>
+</html>
